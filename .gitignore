@@ -1,0 +1,5 @@
+# ignore .o file
+*.o
+
+# ignore vs files
+.vs*
