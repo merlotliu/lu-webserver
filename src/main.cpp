@@ -16,7 +16,7 @@
 
 #define MAX_FD 65536
 #define MAX_EVENT_NUMBER 10000
-#define BACKLOG_DEFAULT 64
+#define BACKLOG_DEFAULT 8
 #define NUMBER_IGN 1
 
 int main(int argc, char *argv[]) {
@@ -89,7 +89,7 @@ int main(int argc, char *argv[]) {
         
         /* traverse events */
         for(int i = 0; i < num; i++) {
-            int curfd = events->data.fd;
+            int curfd = events[i].data.fd;
             if(listenfd == curfd) {
                 /* new connction comming */
 #ifdef __DEBUG
@@ -99,8 +99,8 @@ int main(int argc, char *argv[]) {
                 socklen_t client_addr_len = sizeof(client_addr);
                 int connfd = accept(listenfd, (struct sockaddr *)&client_addr, &client_addr_len);
                 if(connfd < 0) {
-                    printf("errno is: %d", errno);
-                    perror(" ");
+                    printf("errno is: %d\n", errno);
+                    perror("");
                     continue;
                 }
                 if(lu::http_conn::_user_count >= MAX_FD) {

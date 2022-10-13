@@ -22,11 +22,11 @@ public:
     }
     /* lock mutex */
     bool lock() {
-        return pthread_mutex_lock(&_mutex);
+        return pthread_mutex_lock(&_mutex) == 0;
     }
     /* unlock mutex */
     bool unlock() {
-        return pthread_mutex_unlock(&_mutex);
+        return pthread_mutex_unlock(&_mutex) == 0;
     }
 private:
     pthread_mutex_t _mutex;
@@ -59,7 +59,7 @@ public:
         return sem_post(&_sem) == 0;
     }
     /* get semaphore value */
-    int getValue() {
+    int get_val() {
         int sval;
         if(sem_getvalue(&_sem, &sval) != 0) {
             throw std::exception();

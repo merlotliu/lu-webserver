@@ -8,7 +8,7 @@
 
 #include "locker.h"
 
-#define __DEBUG
+//#define __DEBUG
 
 #define THREAD_NUM_DEFAULT 8 /* default thread number */
 #define MAX_TASKS_DEFAULT 10000 /* default max tasks */

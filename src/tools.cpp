@@ -6,9 +6,9 @@ namespace lu {
 void tools::set_sigcatch(int signum, void(*handler)(int), bool restart) {
     struct sigaction act;
     bzero(&act, sizeof(act));
-    if(restart) {
-        act.sa_flags |= SA_RESTART; /* recall the interrupted system call by the signal */
-    }
+    //if(restart) {
+        //act.sa_flags |= SA_RESTART; /* recall the interrupted system call by the signal */
+    //}
     act.sa_handler = handler;
     sigfillset(&act.sa_mask);
     /* if -1, assert */

@@ -17,7 +17,7 @@
 
 #include "tools.h"
 
-#define __DEBUG /* debug flag */
+//#define __DEBUG /* debug flag */
 
 namespace lu{
 

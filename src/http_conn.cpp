@@ -282,7 +282,7 @@ http_conn::HTTP_CODE http_conn::parse_request_line(char * text) {
         return BAD_REQUEST;
     }
     *_version++ = '\0';
-    if (strcasecmp( _version, "HTTP/1.1") != 0 ) { /* only support HTTP/1.1 */
+    if (strcasecmp( _version, "HTTP/1.1") != 0 || strcasecmp( _version, "HTTP/1.0") != 0) { /* support HTTP/1.1 & 1.0 */
         return BAD_REQUEST;
     }
     /* method & version is ok */
