@@ -4,8 +4,9 @@
 # v1.0 2022.10.12
 - 服务器最核心的功能实现完成：
     - 线程池解决多用户连接的并发问题；
-    - epoll I/O 多路复用；
+    - LT 模式的 epoll I/O 多路复用；
     - 有限状态机解析简单的 HTTP Request；
+    - 同步 I/O 模拟异步 Proactor 事件处理模式；
 - Tricks:
     - C 语言不定参数（va_list, va_start, va_end）;
     - 使用用了一些平时少用的 API，如：
