@@ -16,3 +16,8 @@
         - strspn：获取连续字符长度；
         - vsnprintf：类似 sprintf，详见 man 文档；
         - writev：将多个buffer内容写入一个文件描述符；
+
+# 压力测试工具
+    - webbench 模拟多个用户访问服务器资源：
+    - webbench -c <user-num> -t <visit-time> <url>
+    - eg : webbench -c 5000 -t 5 http://192.168.1.111:8888/index.html
